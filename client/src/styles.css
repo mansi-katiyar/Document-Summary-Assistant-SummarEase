@@ -1,0 +1,9 @@
+:root{--accent:#2563eb}
+body{font-family:Inter,system-ui,Arial;margin:0;background:#f7f9fc;color:#0f172a}
+.app{max-width:900px;margin:24px auto;padding:18px}
+header h1{margin:0 0 12px}
+.uploader{border:2px dashed #cbd5e1;padding:20px;border-radius:8px;background:white}
+.controls{display:flex;gap:12px;align-items:center;margin-top:12px}
+button{background:var(--accent);color:white;padding:8px 12px;border-radius:6px;border:0;cursor:pointer}
+.summary{background:white;padding:12px;border-radius:8px;margin-top:12px}
+.loading{opacity:0.7}
