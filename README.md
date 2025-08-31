@@ -13,3 +13,35 @@ Deliverables included:
 - Working app (locally runnable)
 - GitHub-friendly structure
 - Brief write-up (200 words) in `BRIEF_WRITEUP.md`
+---
+- ## 📂 Project Folder Structure
+  
+document-summary-assistant
+├── client/ # Frontend (React + Vite)
+│ ├── public/ # Static files
+│ ├── src/ # React source code
+│ │ ├── components/ # React components
+│ │ │ └── Uploader.jsx
+│ │ ├── App.jsx
+│ │ ├── main.jsx
+│ │ ├── config.js
+│ │ └── styles.css
+│ ├── index.html
+│ ├── package.json
+│ └── vite.config.js
+│
+├── server/ # Backend (Node.js + Express)
+│ ├── uploads/ # Temporary upload storage
+│ ├── server.js # Express server
+│ ├── package.json
+│ ├── .env.example # Example environment file
+│ └── README_BACKEND.md
+│
+├── .gitignore # Ignored files (node_modules, uploads, .env)
+├── README.md # Main documentation
+├── BRIEF_WRITEUP.md # 200-word approach write-up
+└── package-lock.json
+---
+## Pictorial Workflow
+![img url](Gallery)
+
