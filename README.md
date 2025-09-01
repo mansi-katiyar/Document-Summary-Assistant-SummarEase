@@ -1,66 +1,164 @@
-# Document Summary Assistant
+# 📑 Document Summary Assistant
 
-A minimal Document Summary Assistant (frontend + backend) scaffold.
-Features:
-- Upload PDF or image files (drag & drop or file picker)
-- Extract text from PDFs (pdf-parse) and images (Tesseract)
-- Generate summaries using OpenAI (if OPENAI_API_KEY is set) or a simple fallback summarizer
-- Simple responsive React UI (Vite)
+A deployable **Document Summary Assistant** built with React (frontend) and Node.js/Express (backend).  
+This app allows users to upload PDF or image documents, extract their text, and generate **short, medium, or long summaries**.  
+It uses **OCR (Tesseract.js)** for scanned documents and integrates with **OpenAI API** for AI-powered summaries (if a key is provided).  
 
-See `server/README_BACKEND.md` and `client/README_FRONTEND.md` for run instructions.
-
-Deliverables included:
-- Working app (locally runnable)
-- GitHub-friendly structure
-- Brief write-up (200 words) in `BRIEF_WRITEUP.md`
 ---
-- ## 📂 Project Folder Structure
-  
-document-summary-assistant
-├── client/ # Frontend (React + Vite)
 
-│ ├── public/ # Static files
+## 🔎 Overview
 
-│ ├── src/ # React source code
+The Document Summary Assistant is designed as a technical assessment project that demonstrates:
+- Practical file handling (upload PDFs/images)
+- Text extraction via parsing and OCR
+- Automatic summarization with AI fallback
+- Clean, modular frontend and backend code
+- Deployment-ready structure for platforms like Vercel (frontend) and Render/Heroku (backend)
 
-│ │ ├── components/ # React components
+---
 
-│ │ │ └── Uploader.jsx
+## 🚀 Features
 
-│ │ ├── App.jsx
+- 📂 Upload PDFs or image files (drag & drop or file picker)  
+- 📝 Extract text using:
+  - `pdf-parse` (for PDFs)  
+  - `tesseract.js` (for images/scanned documents)  
+- ✨ Summarization:
+  - Short, medium, and long summaries  
+  - Uses **OpenAI API** if `OPENAI_API_KEY` is provided  
+  - Falls back to a simple keyword-based summarizer if no API key  
+- 📱 Responsive React frontend (works on desktop & mobile)  
+- ⚡ Error handling and loading states  
 
-│ │ ├── main.jsx
+---
 
-│ │ ├── config.js
+## 🛠️ Prerequisites
 
-│ │ └── styles.css
+- [Node.js](https://nodejs.org/) (>= 18.x)  
+- npm (comes with Node.js)  
+- (Optional) OpenAI API Key → [Get Key](https://platform.openai.com/)  
 
-│ ├── index.html
+---
 
-│ ├── package.json
+## ⚙️ Installation
 
-│ └── vite.config.js
+### 1. Clone the repository
+git clone https://github.com/yourusername/document-summary-assistant.git
+cd document-summary-assistant
+
+### 2. Backend Setup
+cd server
+npm install
+npm run dev
+
+
+Runs on http://localhost:4000
+
+Create a .env file inside server/:
+
+PORT=4000
+OPENAI_API_KEY=your_api_key_here   # optional
+
+### 3. Frontend Setup
+cd client
+npm install
+npm run dev
+
+---
+
+## 📂 Project Structure
+document-summary-assistant/
+├── client/                 # React + Vite frontend
+
+│   ├── src/                # Components, styles, config
+
+│   ├── public/
+
+│   └── package.json
 
 │
-├── server/ # Backend (Node.js + Express)
 
-│ ├── uploads/ # Temporary upload storage
+├── server/                 # Node.js backend
 
-│ ├── server.js # Express server
+│   ├── uploads/            # Uploaded files
 
-│ ├── package.json
+│   ├── server.js           # Express API
 
-│ ├── .env.example # Example environment file
+│   ├── package.json
 
-│ └── README_BACKEND.md
+│   └── .env.example
 
 │
-├── .gitignore # Ignored files (node_modules, uploads, .env)
 
-├── README.md # Main documentation
+├── BRIEF_WRITEUP.md        # Approach summary
 
-├── BRIEF_WRITEUP.md # 200-word approach write-up
+├── README.md               # Documentation
 
-└── package-lock.json
+└── .gitignore
+---
+## 📡 API Endpoints
+### POST /upload
 
+-Description: Uploads a file (PDF or image), extracts text, and returns summaries.
 
+-Request: multipart/form-data with file field
+
+-Response:
+
+{
+  "text": "Full extracted text...",
+  "summary": {
+    "short": "Short summary...",
+    "medium": "Medium summary...",
+    "long": "Long summary..."
+  }
+}
+---
+## 💻 Frontend Usage
+
+1. Start backend (npm run dev inside server/).
+
+2. Start frontend (npm run dev inside client/).
+
+3. Open http://localhost:5173 in your browser.
+
+4. Upload a PDF or image → wait for extraction → view summaries.
+---
+## 🧰 Technologies Used
+
+-Frontend: React, Vite, Axios
+
+-Backend: Node.js, Express, Multer, pdf-parse, Tesseract.js
+
+-AI Summarization: OpenAI API (fallback extractive summarizer included)
+
+-Other: dotenv, cors, nodemon
+---
+## 🐞 Troubleshooting
+
+-npm install fails → Ensure Node.js v18+ is installed (node -v).
+
+-Backend not starting → Check if port 4000 is free, and .env file exists.
+
+-OpenAI summarization not working → Add valid OPENAI_API_KEY in .env.
+
+-Frontend can't reach backend → Make sure both servers are running.
+---
+## 🔮 Future Enhancements
+
+-✅ User authentication & saved history of uploads
+
+-✅ More advanced ML summarizers (e.g., HuggingFace transformers)
+
+-✅ Multi-language OCR support
+
+-✅ Export summaries as PDF/Word
+
+-✅ Drag & drop multiple file uploads
+---
+##📜 License
+
+This project is licensed under the MIT License — free to use, modify, and distribute.
+---
+##🖼️ Workflow (Setup Diagram)
+![img url]([workflow.png](https://github.com/mansi-katiyar/Document-Summary-Assistant-SummarEase/blob/084a4f2e78bc8ce87dda602efbec1bdd0cb451ca/Screenshot%202025-09-01%20050551.png))
