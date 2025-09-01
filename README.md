@@ -99,11 +99,11 @@ document-summary-assistant/
 ## 📡 API Endpoints
 ### POST /upload
 
--Description: Uploads a file (PDF or image), extracts text, and returns summaries.
+- Description: Uploads a file (PDF or image), extracts text, and returns summaries.
 
--Request: multipart/form-data with file field
+- Request: multipart/form-data with file field
 
--Response:
+- Response:
 
 {
   "text": "Full extracted text...",
@@ -126,39 +126,39 @@ document-summary-assistant/
 ---
 ## 🧰 Technologies Used
 
--Frontend: React, Vite, Axios
+- Frontend: React, Vite, Axios
 
--Backend: Node.js, Express, Multer, pdf-parse, Tesseract.js
+- Backend: Node.js, Express, Multer, pdf-parse, Tesseract.js
 
--AI Summarization: OpenAI API (fallback extractive summarizer included)
+- AI Summarization: OpenAI API (fallback extractive summarizer included)
 
--Other: dotenv, cors, nodemon
+- Other: dotenv, cors, nodemon
 ---
 ## 🐞 Troubleshooting
 
--npm install fails → Ensure Node.js v18+ is installed (node -v).
+- npm install fails → Ensure Node.js v18+ is installed (node -v).
 
--Backend not starting → Check if port 4000 is free, and .env file exists.
+- Backend not starting → Check if port 4000 is free, and .env file exists.
 
--OpenAI summarization not working → Add valid OPENAI_API_KEY in .env.
+- OpenAI summarization not working → Add valid OPENAI_API_KEY in .env.
 
--Frontend can't reach backend → Make sure both servers are running.
+- Frontend can't reach backend → Make sure both servers are running.
 ---
 ## 🔮 Future Enhancements
 
--✅ User authentication & saved history of uploads
+- ✅ User authentication & saved history of uploads
 
--✅ More advanced ML summarizers (e.g., HuggingFace transformers)
+- ✅ More advanced ML summarizers (e.g., HuggingFace transformers)
 
--✅ Multi-language OCR support
+- ✅ Multi-language OCR support
 
--✅ Export summaries as PDF/Word
+- ✅ Export summaries as PDF/Word
 
--✅ Drag & drop multiple file uploads
+- ✅ Drag & drop multiple file uploads
 ---
-##📜 License
+## 📜 License
 
 This project is licensed under the MIT License — free to use, modify, and distribute.
 ---
-##🖼️ Workflow (Setup Diagram)
-![img url]([workflow.png](https://github.com/mansi-katiyar/Document-Summary-Assistant-SummarEase/blob/084a4f2e78bc8ce87dda602efbec1bdd0cb451ca/Screenshot%202025-09-01%20050551.png))
+## 🖼️ Workflow (Setup Diagram)
+![img url](https://github.com/mansi-katiyar/Document-Summary-Assistant-SummarEase/blob/d89fe68bbcdfc2bd40c6ee235da1eba5765ebed7/Screenshot%202025-09-01%20050551.png)
